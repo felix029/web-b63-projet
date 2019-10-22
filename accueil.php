@@ -16,10 +16,19 @@
 	<title>Hockey battle</title>
 </head>
 <body>
+	<div id="identification">
+		<h1>Connexion à la partie</h1>
+		<form action="accueil.php" method="POST">
+			<label>Nom d'utilisateur: </label>
+			<input type="text" />
+			<label>Mot de passe: </label>
+			<input type="password" />
+			<label>Clé du prof: </label>
+			<input type="password"/>
+			<button></button>
+		</form>
+	</div>
 	<canvas width="1200" height="900">
-		<div id="identification">
-
-		</div>
 	</canvas>
 </body>
 </html>
