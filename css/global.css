@@ -1,0 +1,7 @@
+body{
+	width: 1200px;
+	margin: auto;
+	background-image: url("../images/rink.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
