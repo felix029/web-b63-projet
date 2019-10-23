@@ -17,23 +17,23 @@
 </head>
 <body>
 	<div id="identification">
-		<h1>Connexion</h1>
+		<h1>Hockey battle</h1>
 		<div id="infos">
 		
 			<form action="accueil.php" method="POST">
 				<div>
 					<label>Nom d'utilisateur: </label>
-					<input type="text" />
+					<input type="text" name="username"/>
 				</div>
 			
 				<div>
 					<label>Mot de passe: </label>
-					<input type="password" />
+					<input type="password" name="pwd"/>
 				</div>
 			
 				<div>
 					<label>Clé du prof: </label>
-					<input type="password"/>
+					<input type="password" name="key"/>
 				</div>
 				<div>
 					<button class="button-hockey">Connexion</button>
