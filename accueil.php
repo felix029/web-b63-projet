@@ -18,17 +18,28 @@
 <body>
 	<div id="identification">
 		<h1>Connexion</h1>
-		<form action="accueil.php" method="POST">
-			<label>Nom d'utilisateur: </label>
-			<input type="text" />
-			<label>Mot de passe: </label>
-			<input type="password" />
-			<label>Clé du prof: </label>
-			<input type="password"/>
-			<button></button>
-		</form>
+		<div id="infos">
+		
+			<form action="accueil.php" method="POST">
+				<div>
+					<label>Nom d'utilisateur: </label>
+					<input type="text" />
+				</div>
+			
+				<div>
+					<label>Mot de passe: </label>
+					<input type="password" />
+				</div>
+			
+				<div>
+					<label>Clé du prof: </label>
+					<input type="password"/>
+				</div>
+				<div>
+					<button class="button-hockey">Connexion</button>
+				</div>
+			</form>
+		</div>
 	</div>
-	<canvas width="1200" height="900">
-	</canvas>
 </body>
 </html>
