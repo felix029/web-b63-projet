@@ -1,9 +1,24 @@
+@font-face{
+	font-family: "Sports-Title";
+	src: url("../fonts/SFSportsNight.ttf");
+}
+
+@font-face{
+	font-family: "Sports-Content";
+	src: url("../fonts/octin_college_rg.ttf")
+}
+
 body{
 	width: 1200px;
 	margin: auto;
 	background-image: url("../images/habsrink.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	font-family: "Sports-Content", sans-serif;
+}
+
+h1{
+	font-family: "Sports-Title", sans-serif;
 }
 
 #identification{

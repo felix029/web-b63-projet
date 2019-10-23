@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div id="identification">
-		<h1>Connexion à la partie</h1>
+		<h1>Connexion</h1>
 		<form action="accueil.php" method="POST">
 			<label>Nom d'utilisateur: </label>
 			<input type="text" />
