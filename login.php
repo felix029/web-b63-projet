@@ -1,7 +1,7 @@
 <?php
-	require_once("action/AccueilAction.php");
+	require_once("action/LoginAction.php");
 
-	$action = new AccueilAction();
+	$action = new LoginAction();
 	$action->execute();
 ?>
 
@@ -23,18 +23,18 @@
 		<div id="identification">
 			<h1>Hockey battle</h1>
 			<div id="infos">
-				
+
 				<form action="accueil.php" method="POST">
 					<div>
 						<label>Nom d'utilisateur: </label>
 						<input type="text" name="username"/>
 					</div>
-					
+
 					<div>
 						<label>Mot de passe: </label>
 						<input type="password" name="pwd"/>
 					</div>
-					
+
 					<div>
 						<label>Clé du prof: </label>
 						<input type="password" name="key"/>
