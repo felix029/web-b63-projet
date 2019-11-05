@@ -1,7 +1,7 @@
 <?php
-	require_once("action/LoginAction.php");
+	require_once("action/IndexAction.php");
 
-	$action = new LoginAction();
+	$action = new IndexAction();
 	$action->execute();
 ?>
 
@@ -24,7 +24,14 @@
 			<h1>Hockey battle</h1>
 			<div id="infos">
 
-				<form action="accueil.php" method="POST">
+				<form action="index.php" method="POST">
+					<?php
+						if($action->wrongLogin){
+							?>
+								<div id="error-div"><strong>Erreur : </strong>Connexion erroné</div>
+							<?php
+						}
+					?>
 					<div>
 						<label>Nom d'utilisateur: </label>
 						<input type="text" name="username"/>
@@ -33,11 +40,6 @@
 					<div>
 						<label>Mot de passe: </label>
 						<input type="password" name="pwd"/>
-					</div>
-
-					<div>
-						<label>Clé du prof: </label>
-						<input type="password" name="key"/>
 					</div>
 					<div>
 						<button class="button-hockey">Connexion</button>

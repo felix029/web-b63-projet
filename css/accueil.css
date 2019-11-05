@@ -89,3 +89,12 @@ h1{
 	width: 100vw;
 	height: 100vh;
 }
+
+#error-div {
+	border: 1px solid red;
+	padding:5px;
+	border-radius: 3px;
+	background-color: pink;
+	margin-bottom: 20px;
+	color:red;
+}

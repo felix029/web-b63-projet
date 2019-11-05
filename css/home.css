@@ -1,0 +1,67 @@
+@font-face{
+	font-family: "Sports-Title";
+	src: url("../fonts/SFSportsNight.ttf");
+}
+
+@font-face{
+	font-family: "Sports-Content";
+	src: url("../fonts/octin_college_rg.ttf")
+}
+
+
+body{
+	width: 1200px;
+	margin: auto;
+	background-image: url("../images/bureau.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Sports-Content", sans-serif;
+}
+
+#texte{
+    margin: 50px auto;
+    background: white;
+    border: solid red 5px;
+    border-radius: 10px;
+    padding: 15px 0 15px 0;
+    text-align: center;
+    font-size: 2em;
+    color: #21386f;
+}
+
+#boutons{
+    padding-top: 600px;
+}
+
+#formulaire{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    column-gap: 10px;
+    grid-template-rows: 1fr 1fr;
+}
+
+input{
+    width: 300px;
+    height: 100px;
+    align-self: center;
+    justify-self: center;
+    font-family: "Sports-Content";
+    font-size: 2em;
+    background-color: white;
+    border: solid red 5px;
+    border-radius: 10px;
+    color: #21386f;
+}
+
+.pratique{
+    
+}
+
+.jouer{
+
+}
+
+.quitter{
+    grid-column: span 2;
+}
