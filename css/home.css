@@ -41,7 +41,7 @@ body{
     grid-template-rows: 1fr 1fr;
 }
 
-input{
+button{
     width: 300px;
     height: 100px;
     align-self: center;
@@ -52,14 +52,6 @@ input{
     border: solid red 5px;
     border-radius: 10px;
     color: #21386f;
-}
-
-.pratique{
-    
-}
-
-.jouer{
-
 }
 
 .quitter{

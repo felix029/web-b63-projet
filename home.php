@@ -1,3 +1,11 @@
+<?php
+	require_once("action/HomeAction.php");
+
+	$action = new HomeAction();
+	$action->execute();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,9 +23,9 @@
         </div>
         <div id="boutons">
             <form action="home.php" method="POST" id="formulaire">
-                <input type="button" value="Pratique" class="pratique">
-                <input type="button" value="Jouer" class="jouer">
-                <input type="button" value="Quitter" class="quitter">
+                <button type="submit" name="pratique">Pratique</button>
+                <button type="submit" name="jouer">Jouer</button>
+                <button type="submit" name="quitter" class="quitter">Quitter</button>
             </form>
         </div>
     </div>

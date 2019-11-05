@@ -12,14 +12,15 @@
 		}
 
 		public function execute() {		
-			if(isset($_SESSION["visibility"])){
-				$this->visibility = $_SESSION["visibility"];
-			}
 			
-			if (isset($_POST["logout"])) {
+			if (!empty($_SESSION["logout"])) {
 				session_unset();
 				session_destroy();
 				session_start();
+			}
+
+			if(empty($_SESSION["visibility"])) {
+				$_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
 			}
 
 			if ($this->visibility > CommonAction::$VISIBILITY_PUBLIC) {
