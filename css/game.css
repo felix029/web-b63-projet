@@ -22,7 +22,7 @@ body{
     background-size: cover;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 4fr 2fr;
     font-family: "Sports-Content", sans-serif;
 }
 
@@ -31,9 +31,30 @@ body{
 /* main section container */
 #opponent{
     background-color: rgba(0, 0, 0, 0.5);
-    border-bottom: solid yellow 5px;
+    border-bottom: solid rgba(255, 181, 20, 0.5) 5px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
+#op-hand{
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    margin-left: 10px;
+}
+
+.op-hand{
+    background-image: url("../images/pack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60%;
+    align-self: center;
+}
 
 
 /* =====================    FIGHTING SECTION    ===================== */
@@ -48,6 +69,6 @@ body{
 
 /* main section container */
 #self{
-    background-color: rgba(255, 0, 0, 0.5);
-    border-top: solid blue 5px;
+    background-color: rgba(166, 25, 46, 0.5);
+    border-top: solid rgba(0, 30, 98, 0.5) 5px;
 }

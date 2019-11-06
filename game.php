@@ -18,14 +18,20 @@
 </head>
 <body>
     <div id="opponent">
-        <div id="op-deck">
-
+        <div id="op-hand">
+            <div class="op-hand" id="op-hand1"></div>
+            <div class="op-hand" id="op-hand2"></div>
+            <div class="op-hand" id="op-hand3"></div>
+            <div class="op-hand" id="op-hand4"></div>
+            <div class="op-hand" id="op-hand5"></div>
+            <div class="op-hand" id="op-hand6"></div>
+            <div class="op-hand" id="op-hand7"></div>
         </div>
         <div id="op-infos">
 
         </div>
         <div id="op-cards-left">
-        
+
         </div>
     </div>
 
