@@ -21,6 +21,25 @@
         <div id="texte">
             Grosse game à soir! Prêt pour la partie ou tu veux encore te pratiquer?
         </div>
+        <?php
+            if($action->result === "INVALID_KEY"){
+                ?>
+                    <div class="error-div"><strong>ERREUR: </strong>Problème API avec la clé.</div>
+                <?php
+            }
+
+            if($action->result === "INVALID_GAME_TYPE"){
+                ?>
+                    <div class="error-div"><strong>ERREUR: </strong>Problème API avec le type de partie.</div>
+                <?php
+            }
+
+            if($action->result === "DECK_INCOMPLETE"){
+                ?>
+                    <div class="error-div"><strong>ERREUR: </strong>Il n'y a pas assé de cartes dans votre jeu.</div>
+                <?php
+            }
+        ?>
         <div id="boutons">
             <form action="home.php" method="POST" id="formulaire">
                 <button type="submit" name="pratique">Pratique</button>
