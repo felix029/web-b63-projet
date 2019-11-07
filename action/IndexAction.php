@@ -21,7 +21,7 @@
 					$this->wrongLogin = true;
 				}
 				else{
-					$_SESSION["key"] = $result->key;
+					$_SESSION["key"] = $result->key;			
 					$_SESSION["username"] = $data["username"];
 					$_SESSION["visibility"] = 1;
 					header("location:home.php");

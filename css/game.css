@@ -33,7 +33,7 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     border-bottom: solid rgba(255, 181, 20, 0.5) 5px;
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 150px;
     grid-template-columns: 1fr 2fr 1fr;
 }
 
@@ -41,19 +41,109 @@ body{
     height: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px;
     grid-template-rows: 1fr;
     column-gap: 10px;
     margin-left: 10px;
 }
 
-.op-hand{
+#op-hand1, #op-hand2, #op-hand3, #op-hand4, #op-hand5, #op-hand6, #op-hand7 {
+    display: none;
+}
+
+.hand{
     background-image: url("../images/pack.png");
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 60%;
+    width: 75px;
+    height: 100px;
     align-self: center;
+}
+
+#op-infos{
+    display: grid;
+    grid-template-columns: 1fr 250px 1fr;
+    grid-template-rows: 1fr;
+}
+
+#op-hp{
+    background-image: url("../images/plaster.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
+    justify-self: flex-end;
+    width: 80px;
+    height: 80px;
+}
+
+#op-class{
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    top: 15px;
+    width: 200px;
+    height: 200px;
+}
+
+#op-name{
+    width: 260px;
+    text-align: center;
+    position: relative;
+    top: 140px;
+    right: 30px;
+    font-size: 2em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: solid rgba(255, 181, 20, 0.8) 3px;
+    border-radius: 10px;
+}
+
+#op-mp{
+    background-image: url("../images/puck.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-self: center;
+    justify-self: flex-start;
+    width: 80px;
+    height: 80px;
+}
+
+#op-hp p{
+    color: white;
+    position: relative;
+    top: 25px;
+    left: 28px;
+    font-size: 1.5em;
+}
+
+#op-mp p{
+    color: white;
+    position: relative;
+    top: 25px;
+    left: 38px;
+    font-size: 1.5em;
+}
+
+#op-cards-left{
+    align-self: center;
+    justify-self: flex-end;
+    margin-right: 10px;
+}
+
+#op-cards-left div div{
+    color: black;
+    position: relative;
+    top: 30px;
+    left: 12px;
+    font-size: 2em;
+    width:  50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: solid rgba(255, 181, 20, 0.8) 3px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
 }
 
 
