@@ -52,6 +52,15 @@
         <div id="self-cards">
         
         </div>
+        <template id="card-template">
+            <div class="player">
+                <div id="player-name"></div>
+                <img id="player-image">
+                <div id="player-desc"></div>
+                <div id="player-hp"></div>
+                <div id="player-mp"></div>
+            </div>
+        </template>
     </div>
 
     <div id="self">
