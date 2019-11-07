@@ -1,15 +1,9 @@
 let hand = [];
-let $oph1 = null;
-let $oph2 = null;
-let $oph3 = null;
-let $oph4 = null;
-let $oph5 = null;
-let $oph6 = null;
-let $oph7 = null;
 let firstRequest = true;
 
 window.addEventListener("load", () => {
     
+    //opponents variables
     $oph1 = $('#op-hand1');
     $oph2 = $('#op-hand2');
     $oph3 = $('#op-hand3');
@@ -33,7 +27,14 @@ window.addEventListener("load", () => {
     hand.push($oph6);
     hand.push($oph7);
 
+    //fight area variables
 
+    //self variables
+    $hp = $('#hp');
+    $mp = $('#mp');
+    $cardsLeft = $('#cards-left');
+
+    $time = $('#time');
     
     setTimeout(state, 1000);
 });
@@ -69,29 +70,34 @@ const state = () => {
         }
         else{
             //opponent's section
-        let i = 1;
-        hand.forEach( card => {
-            if(i<=reponse.opponent.handSize){
-                card.show();
-            }
-            else{
-                card.hide();
-            }
-            i++;
-        });
+            let i = 1;
+            hand.forEach( card => {
+                if(i<=reponse.opponent.handSize){
+                    card.show();
+                }
+                else{
+                    card.hide();
+                }
+                i++;
+            });
 
 
 
-        $opHp.text(reponse.opponent.hp);
-        
-        $opMp.text(reponse.opponent.mp);
-        
-        $opCardsLeft.text(reponse.opponent.remainingCardsCount);
+            $opHp.text(reponse.opponent.hp);
+
+            $opMp.text(reponse.opponent.mp);
+
+            $opCardsLeft.text(reponse.opponent.remainingCardsCount);
 
 
-        //game section
-        
-        //self section
+            //game section
+
+            //self section
+            $hp.text(reponse.hp);
+            $mp.text(reponse.mp);
+            $cardsLeft.text(reponse.remainingCardsCount);
+
+            $time.text("Time left: " + reponse.remainingTurnTime);            
 
         }
 

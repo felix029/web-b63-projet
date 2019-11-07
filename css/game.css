@@ -34,9 +34,10 @@ body{
     border-bottom: solid rgba(255, 181, 20, 0.5) 5px;
     display: grid;
     grid-template-rows: 150px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 620px 1fr 620px;
 }
 
+/* left part (hand) */
 #op-hand{
     height: 100%;
     display: grid;
@@ -60,6 +61,7 @@ body{
     align-self: center;
 }
 
+/* middle part (hp, mp, name, class) */
 #op-infos{
     display: grid;
     grid-template-columns: 1fr 250px 1fr;
@@ -91,7 +93,7 @@ body{
     width: 260px;
     text-align: center;
     position: relative;
-    top: 140px;
+    top: 145px;
     right: 30px;
     font-size: 2em;
     color: white;
@@ -122,10 +124,11 @@ body{
     color: white;
     position: relative;
     top: 25px;
-    left: 38px;
+    left: 40px;
     font-size: 1.5em;
 }
 
+/* right part (cards left) */
 #op-cards-left{
     align-self: center;
     justify-self: flex-end;
@@ -133,7 +136,6 @@ body{
 }
 
 #op-cards-left div div{
-    color: black;
     position: relative;
     top: 30px;
     left: 12px;
@@ -161,4 +163,99 @@ body{
 #self{
     background-color: rgba(166, 25, 46, 0.5);
     border-top: solid rgba(0, 30, 98, 0.5) 5px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+/* left part (infos player) */
+#self-infos{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#self-hp{
+    background-image: url("../images/plaster.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90px;
+    height: 90px;
+}
+
+#self-hp p{
+    color: white;
+    position: relative;
+    top: 28px;
+    left: 32px;
+    font-size: 1.6em;
+}
+
+#self-mp{
+    background-image: url("../images/puck.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90px;
+    height: 90px;
+}
+
+#self-mp p{
+    color: white;
+    position: relative;
+    top: 28px;
+    left: 42px;
+    font-size: 1.6em;
+}
+
+#self-cards-left{
+    background-image: url("../images/pack.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90px;
+    height: 120px;
+    grid-column: span 2;
+}
+
+#cards-left{
+    position: relative;
+    top: 38px;
+    left: 13px;
+    font-size: 2.2em;
+    width:  60px;
+    background-color: rgba(166, 25, 46, 0.8);
+    border: solid rgba(0, 30, 98, 0.8) 3px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* right part (game infos / actions) */
+#game-infos{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#game-infos button{
+    background-image: url("../images/blue-button.png");
+    background-size: cover;
+    background-color: transparent;
+	width: 200px;
+	height: 75px;
+	color: white;
+	margin: auto;
+	border: none;
+	font-family: "Sports-Content";
+	font-size: 1.1em;
+}
+
+#time{
+    font-size: 2em;
+    background-color: rgba(166, 25, 46, 0.8);
+    border: solid rgba(0, 30, 98, 0.8) 3px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
 }

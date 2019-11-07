@@ -71,7 +71,7 @@ h1{
 }
 
 .button-hockey{
-	background-image: url("../images/blue-button.jpg");
+	background-image: url("../images/blue-button.png");
 	background-size: cover;
 	width: 200px;
 	height: 75px;
@@ -80,6 +80,7 @@ h1{
 	border: none;
 	font-family: "Sports-Content";
 	font-size: 1.1em;
+	background-color: transparent;
 }
 
 .full-canvas{

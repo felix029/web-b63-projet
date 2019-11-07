@@ -56,16 +56,22 @@
 
     <div id="self">
         <div id="self-infos">
-            <div id="self-hp"></div>    
-            <div id="self-mp"></div>
-            <div id="self-cards-left"></div>
+            <div id="self-hp">
+                <p id="hp"></p>
+            </div>    
+            <div id="self-mp">
+                <p id="mp"></p>
+            </div>
+            <div id="self-cards-left">
+                <div id="cards-left"></div>
+            </div>
         </div>
         <div id="self-deck">
 
         </div>
         <div id="game-infos">
-            <button id="hero-power"></button>
-            <button id="end-turn"></button>
+            <button id="hero-power">Hero power</button>
+            <button id="end-turn">End turn</button>
             <div id="time"></div>  
         </div>
     </div>
