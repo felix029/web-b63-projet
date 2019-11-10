@@ -154,7 +154,7 @@ const state = () => {
                 newCard.querySelector(".mp-text").innerHTML = opBoard[i].cost;
                 newCard.querySelector(".player-desc").innerHTML = "";
                 for(let j = 0; j < opBoard[i].mechanics.length; j++){
-                    newCard.querySelector(".player-desc").innerHTML += opBoard[i].mechanics[j];
+                    newCard.querySelector(".player-desc").innerHTML += opBoard[i].mechanics[j]  + " ";
                 }
                 newCard.querySelector(".player-atk").innerHTML = opBoard[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = opBoard[i].hp;
@@ -177,7 +177,7 @@ const state = () => {
                 newCard.querySelector(".mp-text").innerHTML = selfBoard[i].cost;
                 newCard.querySelector(".player-desc").innerHTML = "";
                 for(let j = 0; j < selfBoard[i].mechanics.length; j++){
-                    newCard.querySelector(".player-desc").innerHTML += selfBoard[i].mechanics[j];
+                    newCard.querySelector(".player-desc").innerHTML += selfBoard[i].mechanics[j]  + " ";
                 }
                 newCard.querySelector(".player-atk").innerHTML = selfBoard[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = selfBoard[i].hp;
@@ -210,7 +210,7 @@ const state = () => {
                 newCard.querySelector(".mp-text").innerHTML = selfDeck[i].cost;
                 newCard.querySelector(".player-desc").innerHTML = "";
                 for(let j = 0; j < selfDeck[i].mechanics.length; j++){
-                    newCard.querySelector(".player-desc").innerHTML += selfDeck[i].mechanics[j];
+                    newCard.querySelector(".player-desc").innerHTML += selfDeck[i].mechanics[j] + " ";
                 }
                 newCard.querySelector(".player-atk").innerHTML = selfDeck[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = selfDeck[i].hp;
@@ -223,7 +223,8 @@ const state = () => {
             }
 
 
-            $time.text("Time left: " + reponse.remainingTurnTime);            
+            $time.text("Time left: " + reponse.remainingTurnTime);   
+            console.log(reponse.remainingTurnTime);         
 
         }
 
@@ -268,6 +269,7 @@ const setButtons = () =>{
                 let rep = JSON.parse(msg);
 
                 
+                
             })
         };
     }
@@ -302,6 +304,7 @@ const setButtons = () =>{
                 }).done( msg => {
                     let rep = JSON.parse(msg);
     
+
                     selectedCard = null;
                     
                 })
@@ -316,8 +319,7 @@ const setButtons = () =>{
                 type: "POST",
                 data: {
                     type: "ATTACK",
-                    uid: selectedCard.id,
-                    targetuid: null
+                    uid: selectedCard.id
                 }
             }).done( msg => {
                 let rep = JSON.parse(msg);

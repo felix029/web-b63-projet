@@ -20,10 +20,13 @@
             if($_POST["type"] === "PLAY"){
                 $data = array("key" => $_SESSION["key"], "type" => "PLAY", "uid" => $_POST["uid"]);
             }
-            if($_POST["type"] === "ATTACK"){
+            if($_POST["type"] === "ATTACK" && !empty($_POST["targetuid"])){
                 $data = array("key" => $_SESSION["key"], "type" => "ATTACK", "uid" => $_POST["uid"], "targetuid" => $_POST["targetuid"]);
             }
-                            
+            if($_POST["type"] === "ATTACK" && empty($_POST["targetuid"])){
+                $data = array("key" => $_SESSION["key"], "type" => "ATTACK", "uid" => $_POST["uid"]);
+            }
+            
             $this->result = parent::callApi("games/action", $data);   
         }
 
