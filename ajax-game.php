@@ -3,3 +3,5 @@
 
     $action = new AjaxGameAction();
     $action->execute();
+
+    echo json_encode($action->result);

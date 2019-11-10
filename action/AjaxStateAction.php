@@ -11,7 +11,7 @@
 		protected function executeAction() {
             $data = array("key" => $_SESSION["key"]);
 
-            $this->result = parent::callAPI("games/state", $data);
+            $this->result = parent::callApi("games/state", $data);
         }
     }
             

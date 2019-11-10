@@ -1,11 +1,11 @@
 @font-face{
-	font-family: "Sports-Title";
-	src: url("../fonts/SFSportsNight.ttf");
+	font-family: "Sports-Content";
+	src: url("../fonts/octin_college_rg.ttf");
 }
 
 @font-face{
-	font-family: "Sports-Content";
-	src: url("../fonts/octin_college_rg.ttf")
+    font-family: "scoreboard";
+    src: url("../fonts/CursedTimerUlil-Aznm.ttf");
 }
 
 *{
@@ -30,8 +30,6 @@ body{
 
 /* main section container */
 #opponent{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-bottom: solid rgba(255, 181, 20, 0.5) 5px;
     display: grid;
     grid-template-rows: 150px;
     grid-template-columns: 620px 1fr 620px;
@@ -87,6 +85,11 @@ body{
     top: 15px;
     width: 200px;
     height: 200px;
+    transition: 1s;
+}
+
+#op-class:hover{
+    cursor: pointer;
 }
 
 #op-name{
@@ -96,10 +99,6 @@ body{
     top: 145px;
     right: 30px;
     font-size: 2em;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: solid rgba(255, 181, 20, 0.8) 3px;
-    border-radius: 10px;
 }
 
 #op-mp{
@@ -135,34 +134,146 @@ body{
     margin-right: 10px;
 }
 
-#op-cards-left div div{
+#op-cards-left-val{
     position: relative;
     top: 30px;
     left: 12px;
     font-size: 2em;
     width:  50px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: solid rgba(255, 181, 20, 0.8) 3px;
-    border-radius: 10px;
-    color: white;
     text-align: center;
 }
 
 
 /* =====================    FIGHTING SECTION    ===================== */
 
-/* main  section container */
+/* main section container */
 #arena{
-
+    width: 100%;
 }
 
+/* welcome texts */
+#welcomeText{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    row-gap: 50px;
+}
+
+.wt{
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* game */
+#board{
+    display: none;
+    width: 1200px;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 315px 270px;
+    margin: auto;
+}
+
+#op-cards, #self-cards{
+    display: flex;
+    justify-content: center;
+}
+
+.card-on-board{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 161px;
+    height: 230px;
+    transition: 1s;
+    box-shadow: 0 0 20px black;
+}
+
+.card-on-board:hover{
+    cursor: pointer;
+    box-shadow: 0 0 50px black;   
+}
+
+.op-card{
+    margin: 70px 20px 20px 20px;
+}
+
+.self-card{
+    margin: 30px 20px 0 20px;
+}
+
+.player{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
+}
+
+.player-mp{
+    background-image: url("../images/puck.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    color: white;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    /* grid-column: span 2; */
+}
+
+.player-desc{
+    width:85%;
+    height: 55px;
+    color:black;
+    position: relative;
+    top: 125px;
+    left: 12px;
+    font-size: 0.8em;
+    /* grid-column: span 2; */
+}
+
+.player-atk{
+    background-color: black;
+    border: ridge darkorange 5px;
+    border-radius: 5px;
+    padding-top: 4px;
+    width: 23px;
+    color: darkorange;
+    font-family: "scoreboard";
+    position: relative;
+    top: 105px;
+    left: -12px;
+}
+
+.player-hp{
+    background-image: url("../images/plaster.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    color: white;
+    position: relative;
+    top: 74px;
+    left: 135px;
+}
+
+.mp-text, .hp-text{
+    padding-top: 9px;
+    padding-left: 2px;
+}
 
 /* =====================     SELF SECTION       =====================  */
 
 /* main section container */
 #self{
-    background-color: rgba(166, 25, 46, 0.5);
-    border-top: solid rgba(0, 30, 98, 0.5) 5px;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
 }
@@ -223,11 +334,28 @@ body{
     left: 13px;
     font-size: 2.2em;
     width:  60px;
-    background-color: rgba(166, 25, 46, 0.8);
-    border: solid rgba(0, 30, 98, 0.8) 3px;
-    border-radius: 10px;
-    color: white;
     text-align: center;
+}
+
+/* middle part (deck) */
+#self-deck{
+    display: flex;
+    justify-content: center;
+}
+
+.card-on-deck{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 161px;
+    height: 230px;
+    margin: 30px 20px 0 20px;
+    transition: 1s;
+    box-shadow: 0 0 20px white;
+}
+
+.card-on-deck:hover{
+    cursor: pointer;
+    box-shadow: 0 0 20px rgb(0, 30, 98);
 }
 
 /* right part (game infos / actions) */
@@ -253,9 +381,48 @@ body{
 
 #time{
     font-size: 2em;
+    padding: 5px;
+}
+
+/* colors class */
+
+.bos{
+    background-color: rgba(0, 0, 0, 0.8);
+    border: solid rgba(255, 181, 20, 0.8) 3px;
+    border-radius: 10px;
+    color: white;
+}
+
+.mtl{
     background-color: rgba(166, 25, 46, 0.8);
     border: solid rgba(0, 30, 98, 0.8) 3px;
     border-radius: 10px;
     color: white;
-    padding: 5px;
 }
+
+.bosOn{
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: solid rgba(255, 181, 20, 0.9) 5px;
+}
+
+.bosOff{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: solid rgba(255, 181, 20, 0.4) 5px;
+}
+
+.mtlOn{
+    background-color: rgba(166, 25, 46, 0.9);
+    border-top: solid rgba(0, 30, 98, 0.9) 5px;
+}
+
+.mtlOff{
+    background-color: rgba(166, 25, 46, 0.4);
+    border-top: solid rgba(0, 30, 98, 0.4) 5px;
+}
+
+.sleep{
+    opacity: 0.5;
+}
+
+
+

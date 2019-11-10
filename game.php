@@ -32,7 +32,7 @@
                 <p id="op-hp-val"></p>
             </div>
             <div id="op-class">
-                <div id="op-name"></div>
+                <div id="op-name" class="bos"></div>
             </div>
             <div id="op-mp">
                 <p id="op-mp-val"></p>
@@ -40,27 +40,32 @@
         </div>
         <div id="op-cards-left">
             <div class="hand">
-                <div id="op-cards-left-val"></div>
+                <div id="op-cards-left-val" class="bos"></div>
             </div>
         </div>
     </div>
 
     <div id="arena">
-        <div id="op-cards">
-        
+        <div id="welcomeText">
+            <div id="wtOp" class="wt bos"></div>
+            <div id="wtSelf" class="wt mtl"></div>
         </div>
-        <div id="self-cards">
-        
+        <div id="board">
+            <div id="op-cards"></div>
+            <div id="self-cards"></div>
+            <template id="card-template">
+                <div class="player">
+                    <div class="player-mp">
+                        <p class="mp-text"></p>
+                    </div>
+                    <div class="player-desc"></div>
+                    <div class="player-atk"></div>
+                    <div class="player-hp">
+                        <p class="hp-text"></p>
+                    </div>
+                </div>
+            </template>
         </div>
-        <template id="card-template">
-            <div class="player">
-                <div id="player-name"></div>
-                <img id="player-image">
-                <div id="player-desc"></div>
-                <div id="player-hp"></div>
-                <div id="player-mp"></div>
-            </div>
-        </template>
     </div>
 
     <div id="self">
@@ -72,16 +77,14 @@
                 <p id="mp"></p>
             </div>
             <div id="self-cards-left">
-                <div id="cards-left"></div>
+                <div id="cards-left" class="mtl"></div>
             </div>
         </div>
-        <div id="self-deck">
-
-        </div>
+        <div id="self-deck"></div>
         <div id="game-infos">
             <button id="hero-power">Hero power</button>
             <button id="end-turn">End turn</button>
-            <div id="time"></div>  
+            <div id="time" class="mtl"></div>  
         </div>
     </div>
 </body>

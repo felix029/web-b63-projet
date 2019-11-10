@@ -9,7 +9,22 @@
         }
 
         protected function executeAction() {
+            $data = null;
 
+            if($_POST["type"] === "END_TURN"){
+                $data = array("key" => $_SESSION["key"], "type" => "END_TURN");
+            }
+            if($_POST["type"] === "HERO_POWER"){
+                $data = array("key" => $_SESSION["key"], "type" => "HERO_POWER");
+            }
+            if($_POST["type"] === "PLAY"){
+                $data = array("key" => $_SESSION["key"], "type" => "PLAY", "uid" => $_POST["uid"]);
+            }
+            if($_POST["type"] === "ATTACK"){
+                $data = array("key" => $_SESSION["key"], "type" => "ATTACK", "uid" => $_POST["uid"], "targetuid" => $_POST["targetuid"]);
+            }
+                            
+            $this->result = parent::callApi("games/action", $data);   
         }
 
     }
