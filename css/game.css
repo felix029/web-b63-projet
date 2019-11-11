@@ -43,7 +43,7 @@ body{
 
 .quit{
     display: none;
-    
+
     top: calc(calc(100vh / 2) - 200px);
     left: calc(calc(100vw /2) - 250px);
     color: black;
@@ -58,16 +58,16 @@ body{
 
 .message{
     display: none;
-    
+
     top: calc(calc(100vh / 2) - 68px);
     left: calc(calc(100vw /2) - 350px);
 
     width: 700px;
-    
+
     padding: 5px 0 5px 0;
 
     opacity: 0.9;
-    
+
     color: darkorange;
     font-size: 1.6em;
 }
@@ -95,7 +95,7 @@ body{
 
     width: 694px;
     height: 500px;
-    
+
     transform: rotate(90deg);
 
 }
@@ -247,10 +247,8 @@ body{
 /* game */
 #board{
     display: none;
-    width: 1200px;
-    height: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.3fr 1.1fr;
+    grid-template-rows: 1fr 1fr;
     margin: auto;
 }
 
@@ -270,7 +268,21 @@ body{
 
 .card-on-board:hover{
     cursor: pointer;
-    box-shadow: 0 0 50px black;   
+    box-shadow: 0 0 50px black;
+}
+
+.taunt-card{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 161px;
+    height: 230px;
+    transition: 1s;
+    box-shadow: 0 0 30px red;
+}
+
+.taunt-card:hover{
+    cursor: pointer;
+    box-shadow: 0 0 50px red;
 }
 
 .op-card{
@@ -507,6 +519,3 @@ body{
 .sleep{
     opacity: 0.5;
 }
-
-
-

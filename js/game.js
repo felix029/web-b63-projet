@@ -172,17 +172,26 @@ const state = () => {
             let opBoard = reponse.opponent.board;
             document.getElementById("op-cards").innerHTML = "";
             for(let i = 0; i < opBoard.length; i++){
+                let taunt = false
                 let newCard = document.createElement("div");
                 newCard.innerHTML = templateCard;
                 newCard.querySelector(".mp-text").innerHTML = opBoard[i].cost;
                 newCard.querySelector(".player-desc").innerHTML = "";
                 for(let j = 0; j < opBoard[i].mechanics.length; j++){
                     newCard.querySelector(".player-desc").innerHTML += opBoard[i].mechanics[j]  + " ";
+                    if(opBoard[i].mechanics[j] == "Taunt"){
+                        taunt = true;
+                    }
                 }
                 newCard.querySelector(".player-atk").innerHTML = opBoard[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = opBoard[i].hp;
                 newCard.id = opBoard[i].uid;
-                newCard.classList.add("card-on-board");
+                if(!taunt){
+                    newCard.classList.add("card-on-board");
+                }
+                else{
+                    newCard.classList.add("taunt-card");
+                }
                 newCard.classList.add("op-card");
                 newCard.style.backgroundImage = "url(images/cards/opp/" + opBoard[i].id + ".png)";
                 document.getElementById("op-cards").appendChild(newCard);
