@@ -200,18 +200,27 @@ const state = () => {
             let selfBoard = reponse.board;
             document.getElementById("self-cards").innerHTML = "";
             for(let i = 0; i < selfBoard.length; i++){
+                let taunt = false;
                 let newCard = document.createElement("div");
                 newCard.innerHTML = templateCard;
                 newCard.querySelector(".mp-text").innerHTML = selfBoard[i].cost;
                 newCard.querySelector(".player-desc").innerHTML = "";
                 for(let j = 0; j < selfBoard[i].mechanics.length; j++){
                     newCard.querySelector(".player-desc").innerHTML += selfBoard[i].mechanics[j]  + " ";
+                    if(selfBoard[i].mechanics[j] == "Taunt"){
+                        taunt = true;
+                    }
                 }
                 newCard.querySelector(".player-atk").innerHTML = selfBoard[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = selfBoard[i].hp;
                 newCard.setAttribute("state", selfBoard[i].state);
                 newCard.id = selfBoard[i].uid;
-                newCard.classList.add("card-on-board");
+                if(!taunt){
+                    newCard.classList.add("card-on-board");
+                }
+                else{
+                    newCard.classList.add("taunt-card");
+                }
                 newCard.classList.add("self-card");
                 newCard.style.backgroundImage = "url(images/cards/self/" + selfBoard[i].id + ".png)";
                 if(selfBoard[i].state == "SLEEP" || yourTurn == false){
