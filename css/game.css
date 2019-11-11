@@ -38,8 +38,6 @@ body{
     border-radius: 10px;
     text-align: center;
     font-family: "scoreboard";
-    background-size: cover;
-    background-repeat: no-repeat;
     z-index: 99;
 }
 
@@ -52,7 +50,7 @@ body{
     border: ridge darkorange 10px;
     border-radius: 10px;
     width: 500px;
-    height: 280px;
+    height: 275px;
     padding-top: 20px;
     font-size: 1.4em;
     font-weight: bold;
@@ -76,7 +74,7 @@ body{
 
 .prompt-quit{
 
-    margin-top: 210px;
+    margin-top: 200px;
     width: 100px;
     height: 40px;
     font-family: "scoreboard";

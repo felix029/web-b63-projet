@@ -205,7 +205,7 @@ const state = () => {
                 newCard.classList.add("card-on-board");
                 newCard.classList.add("self-card");
                 newCard.style.backgroundImage = "url(images/cards/self/" + selfBoard[i].id + ".png)";
-                if(selfBoard[i].state == "SLEEP"){
+                if(selfBoard[i].state == "SLEEP" || yourTurn == false){
                     newCard.classList.add("sleep");
                 }
                 document.getElementById("self-cards").appendChild(newCard);
@@ -229,6 +229,9 @@ const state = () => {
                 newCard.querySelector(".hp-text").innerHTML = selfDeck[i].hp;
                 newCard.id = selfDeck[i].uid;
                 newCard.classList.add("card-on-deck");
+                if(yourTurn == false || reponse.mp < selfDeck[i].cost){
+                    newCard.classList.add("sleep");
+                }
                 newCard.style.backgroundImage = "url(images/cards/self/" + selfDeck[i].id + ".png)";
                 document.getElementById("self-deck").appendChild(newCard);
             }
@@ -341,6 +344,7 @@ const promptPlayer = rep => {
 
     let temp = true;
     let prompt = document.querySelector("#user-prompt");
+    prompt.innerHTML = "";
 
     if(rep == "INVALID_KEY"){
         promptVisible = false;
@@ -365,8 +369,11 @@ const promptPlayer = rep => {
         prompt.style.display = "block";
         prompt.innerHTML = quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "Waiting for another player...";
-        prompt.style.backgroundImage = "url(images/gifs/wait.gif)"; 
         prompt.className = "quit";
+        prompt.style.backgroundImage = "url(images/gifs/wait.gif)";
+        prompt.style.backgroundSize = "cover";
+        prompt.style.backgroundRepeat = "no-repeat";
+
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
@@ -381,8 +388,11 @@ const promptPlayer = rep => {
         prompt.style.display = "block";
         prompt.innerHTML += quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "Victory!";
-        prompt.style.backgroundImage = "url(images/gifs/win" + (Math.floor(Math.random() * 3) + 1) + ".gif)"; 
         prompt.className = "quit";
+        prompt.style.backgroundImage = "url(images/gifs/win" + (Math.floor(Math.random() * 3) + 1) + ".gif)"; 
+        prompt.style.backgroundSize = "cover";
+        prompt.style.backgroundRepeat = "no-repeat";
+
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
@@ -395,8 +405,11 @@ const promptPlayer = rep => {
         prompt.style.display = "block";
         prompt.innerHTML = quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "It's like you didn't even tried...";
-        prompt.style.backgroundImage = "url(images/gifs/lost" + (Math.floor(Math.random() * 3) + 1) + ".gif)";
         prompt.className = "quit";
+        prompt.style.backgroundImage = "url(images/gifs/lost" + (Math.floor(Math.random() * 3) + 1) + ".gif)";
+        prompt.style.backgroundSize = "cover";
+        prompt.style.backgroundRepeat = "no-repeat";
+        
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
