@@ -90,8 +90,8 @@
             </div>
             <div id="self-deck"></div>
             <div id="game-infos">
-                <button id="hero-power" class="mtl">Hero power</button>
-                <button id="end-turn" class="mtl">End turn</button>
+                <button id="hero-power">Hero power</button>
+                <button id="end-turn">End turn</button>
                 <div id="time" class="scoreboard"></div>  
             </div>
         </div>

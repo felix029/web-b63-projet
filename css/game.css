@@ -14,6 +14,10 @@
 }
 
 body{
+    background-color: black;
+}
+
+#container{
     width: 100vw;
     height: 100vh;
     margin: auto;
@@ -24,6 +28,77 @@ body{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 4fr 2fr;
     font-family: "Sports-Content", sans-serif;
+}
+
+#user-prompt{
+    display: none;
+    position: absolute;
+    background-color: black;
+    border: ridge darkorange 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "scoreboard";
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+
+.quit{
+    display: none;
+    
+    top: calc(calc(100vh / 2) - 200px);
+    left: calc(calc(100vw /2) - 250px);
+    color: black;
+    border: ridge darkorange 10px;
+    border-radius: 10px;
+    width: 500px;
+    height: 280px;
+    padding-top: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.message{
+    display: none;
+    
+    top: calc(calc(100vh / 2) - 75px);
+    left: calc(calc(100vw /2) - 350px);
+
+    width: 700px;
+    
+    padding: 5px 0 5px 0;
+
+    opacity: 0.9;
+    
+    color: darkorange;
+    font-size: 1.6em;
+}
+
+.prompt-quit{
+    margin-top: 210px;
+    width: 100px;
+    height: 40px;
+    font-family: "scoreboard";
+    color: darkorange;
+    background-color: black;
+    border: ridge darkorange 5px;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.winDance{
+    background-image: url("../images/gifs/win4.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 120px;
+    left: -100px;
+
+    width: 694px;
+    height: 500px;
+    
+    transform: rotate(90deg);
+
 }
 
 /* =====================    OPPONENT SECTION    ===================== */
@@ -364,27 +439,36 @@ body{
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
+    text-align: center;
 }
 
 #game-infos button{
-    background-image: url("../images/blue-button.png");
-    background-size: cover;
-    background-color: transparent;
+    background-color: white;
+    color: rgb(166, 25, 46);
+    border: solid rgb(0, 30, 98) 5px;
+    border-radius: 10px;
 	width: 200px;
-	height: 75px;
-	color: white;
+	height: 60px;
 	margin: auto;
-	border: none;
 	font-family: "Sports-Content";
-	font-size: 1.1em;
+	font-size: 1.5em;
 }
 
 #time{
-    font-size: 2em;
-    padding: 5px;
+    font-size: 1.5em;
+    padding: 10px;
 }
 
 /* colors class */
+
+.scoreboard{
+    background-color: black;
+    color: darkorange;
+    border: ridge darkorange 5px;
+    border-radius: 10px;
+    font-family: "scoreboard";
+    width: 200px;
+}
 
 .bos{
     background-color: rgba(0, 0, 0, 0.8);
@@ -399,6 +483,7 @@ body{
     border-radius: 10px;
     color: white;
 }
+
 
 .bosOn{
     background-color: rgba(0, 0, 0, 0.9);
