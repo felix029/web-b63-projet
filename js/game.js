@@ -149,104 +149,88 @@ const state = () => {
 
                 firstRequest = false;
             }
-            else{
-                //opponent's section =========================================================================
-                let i = 1;
-                hand.forEach( card => {
-                    if(i<=reponse.opponent.handSize){
-                        card.show();
-                    }
-                    else{
-                        card.hide();
-                    }
-                    i++;
-                });
-
-                $opHp.text(reponse.opponent.hp);
-                $opMp.text(reponse.opponent.mp);
-                $opCardsLeft.text(reponse.opponent.remainingCardsCount);
-
-                //game section ==============================================================================
-                //opponent's card in board
-                let opBoard = reponse.opponent.board;
-                document.getElementById("op-cards").innerHTML = "";
-
-                for(let i = 0; i < opBoard.length; i++){
-                    let newCard = document.createElement("div");
-                    newCard.innerHTML = templateCard;
-                    newCard.querySelector(".mp-text").innerHTML = opBoard[i].cost;
-                    newCard.querySelector(".player-desc").innerHTML = "";
-                    for(let j = 0; j < opBoard[i].mechanics.length; j++){
-                        newCard.querySelector(".player-desc").innerHTML += opBoard[i].mechanics[j]  + " ";
-                    }
-                    newCard.querySelector(".player-atk").innerHTML = opBoard[i].atk;
-                    newCard.querySelector(".hp-text").innerHTML = opBoard[i].hp;
-
-                    newCard.id = opBoard[i].uid;
-                    newCard.classList.add("card-on-board");
-                    newCard.classList.add("op-card");
-                    newCard.style.backgroundImage = "url(images/cards/opp/" + opBoard[i].id + ".png)";
-
-                    document.getElementById("op-cards").appendChild(newCard);
+            
+            //opponent's section =========================================================================
+            let i = 1;
+            hand.forEach( card => {
+                if(i<=reponse.opponent.handSize){
+                    card.show();
                 }
-
-                //self cards on board
-                let selfBoard = reponse.board;
-                document.getElementById("self-cards").innerHTML = "";
-
-                for(let i = 0; i < selfBoard.length; i++){
-                    let newCard = document.createElement("div");
-                    newCard.innerHTML = templateCard;
-                    newCard.querySelector(".mp-text").innerHTML = selfBoard[i].cost;
-                    newCard.querySelector(".player-desc").innerHTML = "";
-                    for(let j = 0; j < selfBoard[i].mechanics.length; j++){
-                        newCard.querySelector(".player-desc").innerHTML += selfBoard[i].mechanics[j]  + " ";
-                    }
-                    newCard.querySelector(".player-atk").innerHTML = selfBoard[i].atk;
-                    newCard.querySelector(".hp-text").innerHTML = selfBoard[i].hp;
-
-                    newCard.setAttribute("state", selfBoard[i].state);
-                    if(selfBoard[i].state == "SLEEP"){
-                        newCard.classList.add("sleep");
-                    }
-
-                    newCard.id = selfBoard[i].uid;
-                    newCard.classList.add("card-on-board");
-                    newCard.classList.add("self-card");
-                    newCard.style.backgroundImage = "url(images/cards/self/" + selfBoard[i].id + ".png)";
-
-                    document.getElementById("self-cards").appendChild(newCard);
+                else{
+                    card.hide();
                 }
-
-
-                //self section ======================================================================
-                $hp.text(reponse.hp);
-                $mp.text(reponse.mp);
-                $cardsLeft.text(reponse.remainingCardsCount);
-
-                //deck
-                let selfDeck = reponse.hand;
-                document.getElementById("self-deck").innerHTML = "";
-                for(let i = 0; i < selfDeck.length; i++){
-                    let newCard = document.createElement("div");
-                    newCard.innerHTML = templateCard;
-                    newCard.querySelector(".mp-text").innerHTML = selfDeck[i].cost;
-                    newCard.querySelector(".player-desc").innerHTML = "";
-                    for(let j = 0; j < selfDeck[i].mechanics.length; j++){
-                        newCard.querySelector(".player-desc").innerHTML += selfDeck[i].mechanics[j] + " ";
-                    }
-                    newCard.querySelector(".player-atk").innerHTML = selfDeck[i].atk;
-                    newCard.querySelector(".hp-text").innerHTML = selfDeck[i].hp;
-
-                    newCard.id = selfDeck[i].uid;
-                    newCard.classList.add("card-on-deck");
-                    newCard.style.backgroundImage = "url(images/cards/self/" + selfDeck[i].id + ".png)";
-
-                    document.getElementById("self-deck").appendChild(newCard);
+                i++;
+            });
+            $opHp.text(reponse.opponent.hp);
+            $opMp.text(reponse.opponent.mp);
+            $opCardsLeft.text(reponse.opponent.remainingCardsCount);
+            //game section ==============================================================================
+            //opponent's card in board
+            let opBoard = reponse.opponent.board;
+            document.getElementById("op-cards").innerHTML = "";
+            for(let i = 0; i < opBoard.length; i++){
+                let newCard = document.createElement("div");
+                newCard.innerHTML = templateCard;
+                newCard.querySelector(".mp-text").innerHTML = opBoard[i].cost;
+                newCard.querySelector(".player-desc").innerHTML = "";
+                for(let j = 0; j < opBoard[i].mechanics.length; j++){
+                    newCard.querySelector(".player-desc").innerHTML += opBoard[i].mechanics[j]  + " ";
                 }
-
-                $time.text("Time left: " + reponse.remainingTurnTime);      
+                newCard.querySelector(".player-atk").innerHTML = opBoard[i].atk;
+                newCard.querySelector(".hp-text").innerHTML = opBoard[i].hp;
+                newCard.id = opBoard[i].uid;
+                newCard.classList.add("card-on-board");
+                newCard.classList.add("op-card");
+                newCard.style.backgroundImage = "url(images/cards/opp/" + opBoard[i].id + ".png)";
+                document.getElementById("op-cards").appendChild(newCard);
             }
+            //self cards on board
+            let selfBoard = reponse.board;
+            document.getElementById("self-cards").innerHTML = "";
+            for(let i = 0; i < selfBoard.length; i++){
+                let newCard = document.createElement("div");
+                newCard.innerHTML = templateCard;
+                newCard.querySelector(".mp-text").innerHTML = selfBoard[i].cost;
+                newCard.querySelector(".player-desc").innerHTML = "";
+                for(let j = 0; j < selfBoard[i].mechanics.length; j++){
+                    newCard.querySelector(".player-desc").innerHTML += selfBoard[i].mechanics[j]  + " ";
+                }
+                newCard.querySelector(".player-atk").innerHTML = selfBoard[i].atk;
+                newCard.querySelector(".hp-text").innerHTML = selfBoard[i].hp;
+                newCard.setAttribute("state", selfBoard[i].state);
+                if(selfBoard[i].state == "SLEEP"){
+                    newCard.classList.add("sleep");
+                }
+                newCard.id = selfBoard[i].uid;
+                newCard.classList.add("card-on-board");
+                newCard.classList.add("self-card");
+                newCard.style.backgroundImage = "url(images/cards/self/" + selfBoard[i].id + ".png)";
+                document.getElementById("self-cards").appendChild(newCard);
+            }
+            //self section ======================================================================
+            $hp.text(reponse.hp);
+            $mp.text(reponse.mp);
+            $cardsLeft.text(reponse.remainingCardsCount);
+            //deck
+            let selfDeck = reponse.hand;
+            document.getElementById("self-deck").innerHTML = "";
+            for(let i = 0; i < selfDeck.length; i++){
+                let newCard = document.createElement("div");
+                newCard.innerHTML = templateCard;
+                newCard.querySelector(".mp-text").innerHTML = selfDeck[i].cost;
+                newCard.querySelector(".player-desc").innerHTML = "";
+                for(let j = 0; j < selfDeck[i].mechanics.length; j++){
+                    newCard.querySelector(".player-desc").innerHTML += selfDeck[i].mechanics[j] + " ";
+                }
+                newCard.querySelector(".player-atk").innerHTML = selfDeck[i].atk;
+                newCard.querySelector(".hp-text").innerHTML = selfDeck[i].hp;
+                newCard.id = selfDeck[i].uid;
+                newCard.classList.add("card-on-deck");
+                newCard.style.backgroundImage = "url(images/cards/self/" + selfDeck[i].id + ".png)";
+                document.getElementById("self-deck").appendChild(newCard);
+            }
+            $time.text("Time left: " + reponse.remainingTurnTime);      
+            
 
             if(yourTurn){
                 document.getElementById("opponent").className = "bosOff";
