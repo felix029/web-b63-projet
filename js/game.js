@@ -344,7 +344,9 @@ const promptPlayer = rep => {
 
     let temp = true;
     let prompt = document.querySelector("#user-prompt");
-    prompt.innerHTML = "";
+    if(!gameOn){
+        prompt.innerHTML = "";
+    }
 
     if(rep == "INVALID_KEY"){
         promptVisible = false;
