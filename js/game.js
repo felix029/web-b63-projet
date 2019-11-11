@@ -198,13 +198,13 @@ const state = () => {
                 newCard.querySelector(".player-atk").innerHTML = selfBoard[i].atk;
                 newCard.querySelector(".hp-text").innerHTML = selfBoard[i].hp;
                 newCard.setAttribute("state", selfBoard[i].state);
-                if(selfBoard[i].state == "SLEEP"){
-                    newCard.classList.add("sleep");
-                }
                 newCard.id = selfBoard[i].uid;
                 newCard.classList.add("card-on-board");
                 newCard.classList.add("self-card");
                 newCard.style.backgroundImage = "url(images/cards/self/" + selfBoard[i].id + ".png)";
+                if(selfBoard[i].state == "SLEEP"){
+                    newCard.classList.add("sleep");
+                }
                 document.getElementById("self-cards").appendChild(newCard);
             }
             //self section ======================================================================

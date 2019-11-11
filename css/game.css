@@ -61,7 +61,7 @@ body{
 .message{
     display: none;
     
-    top: calc(calc(100vh / 2) - 75px);
+    top: calc(calc(100vh / 2) - 68px);
     left: calc(calc(100vw /2) - 350px);
 
     width: 700px;
@@ -251,7 +251,7 @@ body{
     width: 1200px;
     height: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 315px 270px;
+    grid-template-rows: 1.3fr 1.1fr;
     margin: auto;
 }
 
