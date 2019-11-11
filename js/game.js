@@ -5,6 +5,7 @@ let quitPrompt;
 let promptVisible = false;
 let selectedCard = null;
 let yourTurn = false;
+let gameOn = true;
 
 
 window.addEventListener("load", () => {
@@ -244,7 +245,9 @@ const state = () => {
                 document.getElementById("self").className = "mtlOff";
             }
         }
-        setTimeout(state, 1000);
+        if(gameOn){
+            setTimeout(state, 1000);
+        }
 
     })
 
@@ -353,16 +356,17 @@ const promptPlayer = rep => {
             window.location.href = "index.php";
         }
 
+        gameOn = false;
         temp = false;
     }
     if(rep == "WAITING"){
         promptVisible = false;
         $container.hide();
-        prompt.className = "quit";
         prompt.style.display = "block";
         prompt.innerHTML = quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "Waiting for another player...";
         prompt.style.backgroundImage = "url(images/gifs/wait.gif)"; 
+        prompt.className = "quit";
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
@@ -374,28 +378,30 @@ const promptPlayer = rep => {
         let winDance = document.createElement("div");
         winDance.className = "winDance";
         document.querySelector("body").appendChild(winDance);
-        prompt.className = "quit";
         prompt.style.display = "block";
         prompt.innerHTML += quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "Victory!";
         prompt.style.backgroundImage = "url(images/gifs/win" + (Math.floor(Math.random() * 3) + 1) + ".gif)"; 
+        prompt.className = "quit";
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
 
+        gameOn = false;
         temp = false;
     }
     if(rep == "LAST_GAME_LOST"){
         promptVisible = false;
-        prompt.className = "quit";
         prompt.style.display = "block";
         prompt.innerHTML = quitPrompt;
         prompt.querySelector(".prompt-text").innerHTML = "It's like you didn't even tried...";
         prompt.style.backgroundImage = "url(images/gifs/lost" + (Math.floor(Math.random() * 3) + 1) + ".gif)";
+        prompt.className = "quit";
         prompt.querySelector(".prompt-quit").onclick = () => {
             window.location.href = "home.php";
         }
 
+        gameOn = false;
         temp = false;
     }
     if(rep == "INVALID_ACTION"){
