@@ -120,6 +120,8 @@ const state = () => {
             if(firstRequest){
                 
                 $container.show();
+                $('#user-prompt').hide();
+                $('#user-prompt').css("background", "black");
 
                 $opName.text(reponse.opponent.username);
 
@@ -241,8 +243,8 @@ const state = () => {
                 document.getElementById("opponent").className = "bosOn";
                 document.getElementById("self").className = "mtlOff";
             }
-            setTimeout(state, 1000);
         }
+        setTimeout(state, 1000);
 
     })
 
@@ -338,6 +340,7 @@ const promptPlayer = rep => {
     let prompt = document.querySelector("#user-prompt");
 
     if(rep == "INVALID_KEY"){
+        promptVisible = false;
         $container.hide();
         prompt.className = "quit";
         prompt.style.display = "block";
@@ -353,6 +356,7 @@ const promptPlayer = rep => {
         temp = false;
     }
     if(rep == "WAITING"){
+        promptVisible = false;
         $container.hide();
         prompt.className = "quit";
         prompt.style.display = "block";
@@ -366,6 +370,7 @@ const promptPlayer = rep => {
         temp = false;
     }
     if(rep == "LAST_GAME_WON"){
+        promptVisible = false;
         let winDance = document.createElement("div");
         winDance.className = "winDance";
         document.querySelector("body").appendChild(winDance);
@@ -381,6 +386,7 @@ const promptPlayer = rep => {
         temp = false;
     }
     if(rep == "LAST_GAME_LOST"){
+        promptVisible = false;
         prompt.className = "quit";
         prompt.style.display = "block";
         prompt.innerHTML = quitPrompt;
@@ -447,6 +453,7 @@ const promptPlayer = rep => {
         setTimeout( () => { promptVisible = true }, 2000);
     }
     if(rep == "ERROR_PROCESSING_ACTION"){
+        promptVisible = false;
         $container.hide();
         prompt.className = "quit";
         prompt.style.display = "block";
@@ -461,6 +468,7 @@ const promptPlayer = rep => {
         temp = false;
     }
     if(rep == "INTERNAL_ACTION_ERROR"){
+        promptVisible = false;
         $container.hide();
         prompt.className = "quit";
         prompt.style.display = "block";
